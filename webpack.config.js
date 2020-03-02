@@ -7,11 +7,7 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     contentBase: './dist',
-    historyApiFallback: {
-      rewrites: [
-        { from: /^\/$/, to: '/index.html' },
-      ]
-    }
+    historyApiFallback: true
   },
   externals: {
     'react': 'React',
@@ -85,7 +81,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'single-spa 实践',
+      title: 'single-spa demo',
       template: './src/index.html'
     }),
     new CopyPlugin([

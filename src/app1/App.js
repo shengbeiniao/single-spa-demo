@@ -1,19 +1,21 @@
-import React, { PureComponent } from 'react'
-import { Layout, Menu } from 'antd'
+import React, { PureComponent } from "react";
+import { Layout, Menu } from "antd";
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import User from './User'
-import VM from './VM'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import User from "./User";
+import VM from "./VM";
 
-const { Content, Sider } = Layout
+const { Content, Sider } = Layout;
 
 export default class App extends PureComponent {
   render() {
+    const selectKey = location.pathname.split('/app1/')[1]
+
     return (
-      <Router basename="/react">
-        <Layout style={{ height: '100%' }}>
+      <Router basename="/app1">
+        <Layout style={{ height: "100%" }}>
           <Sider>
-            <Menu style={{ height: '100%' }}>
+            <Menu style={{ height: "100%" }} defaultSelectedKeys={[selectKey]}>
               <Menu.Item key="user">
                 <Link to="/user">User</Link>
               </Menu.Item>
@@ -22,19 +24,21 @@ export default class App extends PureComponent {
               </Menu.Item>
             </Menu>
           </Sider>
-          <Layout>
-            <Content>{this.props.children}</Content>
-          </Layout>
+          <Content>
+            <Switch>
+              <Route exact path = "/">
+                <Redirect to="/user"/>
+              </Route>
+              <Route path="/user">
+                <User />
+              </Route>
+              <Route path="/vm">
+                <VM />
+              </Route>
+            </Switch>
+          </Content>
         </Layout>
-        <Switch>
-          <Route path="/user">
-            <User />
-          </Route>
-          <Route path="/vm">
-            <VM />
-          </Route>
-        </Switch>
       </Router>
-    )
+    );
   }
 }
