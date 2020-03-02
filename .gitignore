@@ -1,0 +1,15 @@
+.history
+.DS_Store
+
+node_modules
+
+dist
+
+package-lock.json
+
+dev.log
+yarn-error.log
+yarn.lock
+
+jest/coverage
+jest/report
