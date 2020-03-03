@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
@@ -26,6 +27,11 @@ module.exports = {
     minimize: false,
     splitChunks: {
       chunks: 'all'
+    }
+  },
+  resolve: {
+    alias: {
+      'single-spa': 'single-spa/src/single-spa.js'
     }
   },
   module: {
@@ -86,6 +92,9 @@ module.exports = {
     }),
     new CopyPlugin([
       { from: 'lib', to: 'lib' }
-    ])
+    ]),
+    new webpack.DefinePlugin({
+      '__DEV__': true
+    })
   ]
 }
