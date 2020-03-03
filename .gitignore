@@ -13,3 +13,5 @@ yarn.lock
 
 jest/coverage
 jest/report
+
+.yarnclean

@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
-import Sub from "./Sub";
+import React, { PureComponent } from "react"
+import Sub from "./Sub"
 
 export const UserContext = React.createContext({
   date: new Date().toTimeString()
-});
+})
 
 let timer
 
@@ -26,7 +26,7 @@ export default class extends PureComponent {
         }
       })
       // console.log(this.state.current)
-    }, 1000);
+    }, 1000)
   }
 
   componentWillUnmount(){

@@ -1,13 +1,13 @@
-import React, { PureComponent } from "react";
-import { Layout, Menu } from "antd";
-import { navigateToUrl } from "single-spa";
+import React, { PureComponent } from "react"
+import { Layout, Menu } from "antd"
+import { navigateToUrl } from "single-spa"
 
-const { Header, Content } = Layout;
+const { Header, Content } = Layout
 
 export default class App extends PureComponent {
 
   render() {
-    const selectKey = location.pathname.split("/")[1];
+    const selectKey = location.pathname.split("/")[1]
 
     return (
       <Layout style={{ height: "100%" }}>
@@ -29,6 +29,6 @@ export default class App extends PureComponent {
           <div id="root-slave"></div>
         </Content>
       </Layout>
-    );
+    )
   }
 }

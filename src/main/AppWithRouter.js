@@ -1,16 +1,16 @@
-import React, { PureComponent } from "react";
-import { Layout, Menu } from "antd";
-import { navigateToUrl } from "single-spa";
+import React, { PureComponent } from "react"
+import { Layout, Menu } from "antd"
+import { navigateToUrl } from "single-spa"
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import User from "./User";
-import VM from "./VM";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import User from "./User"
+import VM from "./VM"
 
-const { Header, Content } = Layout;
+const { Header, Content } = Layout
 
 export default class App extends PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isMain: ["/user", "/vm"].indexOf(location.pathname) >= 0
     }
@@ -25,15 +25,19 @@ export default class App extends PureComponent {
   }
 
   render() {
-    const { isMain } = this.state;
+    const { isMain } = this.state
 
-    const selectKey = location.pathname.split('/')[1]
+    const selectKey = location.pathname.split("/")[1]
 
     return (
       <Router>
         <Layout style={{ height: "100%" }}>
           <Header style={{ height: "50px" }}>
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[selectKey]}>
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={[selectKey]}
+            >
               <Menu.Item key="user">
                 <Link to="/user">User</Link>
               </Menu.Item>
@@ -66,6 +70,6 @@ export default class App extends PureComponent {
           </Content>
         </Layout>
       </Router>
-    );
+    )
   }
 }

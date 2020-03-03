@@ -1,0 +1,9 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "no-restricted-globals": 0,
+    "default-case": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "semi": ["error", "never"]
+  }
+}

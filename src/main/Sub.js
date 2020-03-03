@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-import { UserContext } from "./User";
+import React, { PureComponent } from "react"
+import { UserContext } from "./User"
 
 export default class extends PureComponent {
   render() {
@@ -11,6 +11,6 @@ export default class extends PureComponent {
           }
         }
       </UserContext.Consumer>
-    );
+    )
   }
 }
