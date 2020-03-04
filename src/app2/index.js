@@ -9,6 +9,7 @@ export function bootstrap(props) {
 }
 
 export function mount() {
+  console.log('mount')
   return Promise.resolve().then(() => {
     ReactDOM.render(<App />, container)
   })

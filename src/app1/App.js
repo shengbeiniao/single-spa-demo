@@ -2,6 +2,7 @@ import React, { PureComponent } from "react"
 import { Layout, Menu } from "antd"
 
 import {
+  withRouter,
   BrowserRouter as Router,
   Switch,
   Route,
@@ -13,23 +14,32 @@ import VM from "./VM"
 
 const { Content, Sider } = Layout
 
+class _LeftSilder extends PureComponent {
+  render() {
+    const selectKey = this.props.location.pathname.split("/")[1]
+    return (
+      <Sider>
+        <Menu style={{ height: "100%" }} selectedKeys={[selectKey]}>
+          <Menu.Item key="user">
+            <Link to="/user">User</Link>
+          </Menu.Item>
+          <Menu.Item key="vm">
+            <Link to="/vm">VM</Link>
+          </Menu.Item>
+        </Menu>
+      </Sider>
+    )
+  }
+}
+
+const LeftSider = withRouter(_LeftSilder)
+
 export default class App extends PureComponent {
   render() {
-    const selectKey = location.pathname.split("/app1/")[1]
-
     return (
       <Router basename="/app1">
         <Layout style={{ height: "100%" }}>
-          <Sider>
-            <Menu style={{ height: "100%" }} defaultSelectedKeys={[selectKey]}>
-              <Menu.Item key="user">
-                <Link to="/user">User</Link>
-              </Menu.Item>
-              <Menu.Item key="vm">
-                <Link to="/vm">VM</Link>
-              </Menu.Item>
-            </Menu>
-          </Sider>
+          <LeftSider />
           <Content style={{ padding: "30px" }}>
             <Switch>
               <Route exact path="/">
