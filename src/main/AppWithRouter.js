@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react"
 import { Layout, Menu } from "antd"
 import { navigateToUrl } from "single-spa"
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import User from "./User"
 import VM from "./VM"
@@ -54,14 +53,16 @@ export default class App extends PureComponent {
           </Header>
           <Content>
             {isMain ? (
-              <Switch>
-                <Route path="/user">
-                  <User />
-                </Route>
-                <Route path="/vm">
-                  <VM />
-                </Route>
-              </Switch>
+              <div style={{ padding: "50px" }}>
+                <Switch>
+                  <Route path="/user">
+                    <User />
+                  </Route>
+                  <Route path="/vm">
+                    <VM />
+                  </Route>
+                </Switch>
+              </div>
             ) : null}
             <div
               id="root-slave"

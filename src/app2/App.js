@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react'
 export default class App extends PureComponent {
   render() {
     return (
-      <div>
+      <div style={{ padding: "50px" }}>
         <h1>App2</h1>
       </div>
     )

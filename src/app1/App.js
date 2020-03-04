@@ -1,15 +1,21 @@
-import React, { PureComponent } from "react";
-import { Layout, Menu } from "antd";
+import React, { PureComponent } from "react"
+import { Layout, Menu } from "antd"
 
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
-import User from "./User";
-import VM from "./VM";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom"
+import User from "./User"
+import VM from "./VM"
 
-const { Content, Sider } = Layout;
+const { Content, Sider } = Layout
 
 export default class App extends PureComponent {
   render() {
-    const selectKey = location.pathname.split('/app1/')[1]
+    const selectKey = location.pathname.split("/app1/")[1]
 
     return (
       <Router basename="/app1">
@@ -24,10 +30,10 @@ export default class App extends PureComponent {
               </Menu.Item>
             </Menu>
           </Sider>
-          <Content>
+          <Content style={{ padding: "30px" }}>
             <Switch>
-              <Route exact path = "/">
-                <Redirect to="/user"/>
+              <Route exact path="/">
+                <Redirect to="/user" />
               </Route>
               <Route path="/user">
                 <User />
@@ -39,6 +45,6 @@ export default class App extends PureComponent {
           </Content>
         </Layout>
       </Router>
-    );
+    )
   }
 }

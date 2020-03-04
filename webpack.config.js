@@ -10,11 +10,11 @@ module.exports = {
     contentBase: './dist',
     historyApiFallback: true
   },
-  externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'antd': 'antd'
-  },
+  // externals: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDOM',
+  //   'antd': 'antd'
+  // },
   entry: {
     main: './src/main/index.js'
   },
@@ -51,14 +51,14 @@ module.exports = {
             presets: ['@babel/preset-react'],
             plugins: [
               '@babel/plugin-syntax-dynamic-import',
-              // [
-              //   'import',
-              //   {
-              //     libraryName: 'antd',
-              //     libraryDirectory: 'es',
-              //     style: true
-              //   }
-              // ]
+              [
+                'import',
+                {
+                  libraryName: 'antd',
+                  libraryDirectory: 'es',
+                  style: true
+                }
+              ]
             ]
           }
         }

@@ -1,5 +1,6 @@
 {
-  "eslint.enable": true,
+  // "eslint.enable": true,
+  "prettier.semi": false,
   "files.associations": {
     "*.js": "javascriptreact"
   }

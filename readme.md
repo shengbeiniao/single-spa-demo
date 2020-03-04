@@ -1,6 +1,7 @@
 启动项目
 
 ```
+# single-spa 和 history 以 link 方式安装，见下文
 $ yarn 
 $ yarn start
 ```
