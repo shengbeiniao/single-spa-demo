@@ -7,9 +7,9 @@ import * as singleSpa from 'single-spa'
 
 import './common.less'
 
-// ReactDom.render(<App />, document.getElementById('root'))
+ReactDom.render(<App />, document.getElementById('root'))
 
-ReactDom.render(<AppWithRouter />, document.getElementById('root'))
+// ReactDom.render(<AppWithRouter />, document.getElementById('root'))
 
 // ReactDom.render(<AppWithSpa />, document.getElementById('root'))
 
