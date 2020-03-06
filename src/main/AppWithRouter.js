@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react"
+import React, { Component } from "react"
 import { Layout, Menu } from "antd"
 import { navigateToUrl } from "single-spa"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
@@ -7,7 +7,7 @@ import VM from "./VM"
 
 const { Header, Content } = Layout
 
-export default class App extends PureComponent {
+export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -35,7 +35,7 @@ export default class App extends PureComponent {
             <Menu
               theme="dark"
               mode="horizontal"
-              defaultSelectedKeys={[selectKey]}
+              selectedKeys={[selectKey]}
             >
               <Menu.Item key="user">
                 <Link to="/user">User</Link>
