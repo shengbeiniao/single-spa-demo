@@ -1,6 +1,6 @@
 ![demo](readme/demo.gif)
 
-本 demo 负责排查 single-spa 和 react-router 联用产生的 bug，修复 [commit 参考](https://github.com/shengbeiniao/single-spa/commit/bb76f624b0fd1820e7b1695f034810150c389fba)
+本 demo 负责排查 single-spa 和 react-router 联用产生的 bug
 
 启动项目
 
@@ -30,7 +30,7 @@ $ yarn link single-spa
     }
   }
 }
-```
+```dd
 打开 chrome devtools，切换到 sources，打开FileSystem，导入 single-spa 文件夹，这样就可以在源码打断点了，观察调用栈，判断执行逻辑
 
 

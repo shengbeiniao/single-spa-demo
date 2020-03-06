@@ -43,7 +43,7 @@ export default class App extends PureComponent {
               <Menu.Item key="vm">
                 <Link to="/vm">VM</Link>
               </Menu.Item>
-              <Menu.Item key="app1" onClick={() => navigateToUrl("/app1")}>
+              <Menu.Item key="app1" onClick={() => navigateToUrl("/app1/user")}>
                 App1
               </Menu.Item>
               <Menu.Item key="app2" onClick={() => navigateToUrl("/app2")}>
