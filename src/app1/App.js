@@ -10,7 +10,7 @@ import {
   Redirect
 } from "react-router-dom"
 import User from "./User"
-import VM from "./VM"
+import Role from "./Role"
 
 const { Content, Sider } = Layout
 
@@ -23,8 +23,8 @@ class _LeftSilder extends PureComponent {
           <Menu.Item key="user">
             <Link to="/user">User</Link>
           </Menu.Item>
-          <Menu.Item key="vm">
-            <Link to="/vm">VM</Link>
+          <Menu.Item key="role">
+            <Link to="/role">Role</Link>
           </Menu.Item>
         </Menu>
       </Sider>
@@ -48,8 +48,8 @@ export default class App extends PureComponent {
               <Route path="/user">
                 <User />
               </Route>
-              <Route path="/vm">
-                <VM />
+              <Route path="/role">
+                <Role />
               </Route>
             </Switch>
           </Content>

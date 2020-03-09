@@ -7,7 +7,7 @@ export default function() {
 
   return (
     <div>
-      <h1>VM</h1>
+      <h1>Role</h1>
       <Button onClick={()=>history.push('/user')}>Go to User</Button>
     </div>
   )
