@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react"
 import { Layout, Menu } from "antd"
 import { navigateToUrl } from "single-spa"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom"
 import User from "./User"
 import VM from "./VM"
 
@@ -20,7 +20,7 @@ export default class App extends PureComponent {
     window.addEventListener("single-spa:routing-event", () => {
       console.log(location.pathname)
       this.setState({
-        isMain: ["/user", "/vm"].indexOf(location.pathname) >= 0,
+        isMain: ["/","/user", "/vm"].indexOf(location.pathname) >= 0,
         selectKey: location.pathname.split("/")[1]
       })
     })
@@ -56,6 +56,9 @@ export default class App extends PureComponent {
             {isMain ? (
               <div style={{ padding: "50px" }}>
                 <Switch>
+                  <Route exact path="/">
+                    <Redirect to="/user" />
+                  </Route>
                   <Route path="/user">
                     <User />
                   </Route>
